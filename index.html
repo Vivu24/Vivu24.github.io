@@ -114,6 +114,7 @@ h4 { font-family: var(--font-display); font-weight: 500; font-size: 1rem; margin
 .project ul.points li { margin-bottom: 5px; }
 .project .chips { margin-bottom: 18px; }
 
+code { font-family: var(--font-mono); font-size: .88em; background: var(--surface); border: 1px solid var(--line); border-radius: 3px; padding: 0 5px; }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0; padding: 0; }
 .chips li { font-family: var(--font-mono); font-size: 13px; border: 1px solid var(--ink); background: var(--surface); border-radius: 4px; padding: 2px 10px; }
 
@@ -210,7 +211,7 @@ footer { padding-block: 32px; border-top: 2px solid var(--ink); color: var(--mut
           </li>
           <li>
             <span class="medal"><svg class="icon" aria-hidden="true"><use href="#trophy"/></svg></span>
-            <div><strong>Nominado a Juego Más Innovador</strong><span class="sub">Feather Rise · GameInvest, Gamepolis 2023</span></div>
+            <div><strong>Nominado al Premio Innovación</strong><span class="sub">Feather Rise · GameInvest, Gamepolis 2023</span></div>
           </li>
         </ul>
         <div class="tiles">
@@ -225,7 +226,7 @@ footer { padding-block: 32px; border-top: 2px solid var(--ink); color: var(--mut
   <section id="proyectos">
     <div class="wrap">
       <h2 class="title">Proyectos</h2>
-      <p class="section-intro">Cuatro proyectos principales, de equipos de 5 a 12 personas, más jams, prototipos, realidad virtual y aumentada, y un juego multiplataforma en desarrollo.</p>
+      <p class="section-intro">Cinco proyectos principales, con equipos de hasta 12 personas, más jams, prototipos, realidad virtual y aumentada, y un juego multiplataforma en desarrollo.</p>
 
       <div class="projects">
 
@@ -235,7 +236,7 @@ footer { padding-block: 32px; border-top: 2px solid var(--ink); color: var(--mut
             <img src="https://img.itch.zone/aW1nLzI1MzIyNzU2LnBuZw==/original/pVAU%2B7.png" alt="" loading="lazy" onerror="this.remove()">
           </div>
           <div>
-            <p class="stage">FASE 01 / 04</p>
+            <p class="stage">FASE 01 / 05</p>
             <p class="award"><svg class="icon" aria-hidden="true"><use href="#trophy"/></svg>Mejor idea con la temática · Global Game Jam 2026</p>
             <h3>Candela Bros</h3>
             <p class="meta">Equipo de 12 · Programación de audio y gameplay</p>
@@ -259,8 +260,8 @@ footer { padding-block: 32px; border-top: 2px solid var(--ink); color: var(--mut
             <img src="https://img.itch.zone/aW1nLzEyMDc2NjUyLmpwZw==/original/YrQ1hF.jpg" alt="" loading="lazy" onerror="this.remove()">
           </div>
           <div>
-            <p class="stage">FASE 02 / 04</p>
-            <p class="award"><svg class="icon" aria-hidden="true"><use href="#trophy"/></svg>Nominado a Juego Más Innovador · GameInvest, Gamepolis 2023</p>
+            <p class="stage">FASE 02 / 05</p>
+            <p class="award"><svg class="icon" aria-hidden="true"><use href="#trophy"/></svg>Nominado al Premio Innovación · GameInvest, Gamepolis 2023</p>
             <h3>Feather Rise</h3>
             <p class="meta">Equipo de 5 · Programación de gameplay</p>
             <ul class="points">
@@ -282,7 +283,7 @@ footer { padding-block: 32px; border-top: 2px solid var(--ink); color: var(--mut
             <!-- TODO: <img src="media/andyengine.png" alt="Editor del motor AndyEngine"> -->
           </div>
           <div>
-            <p class="stage">FASE 03 / 04</p>
+            <p class="stage">FASE 03 / 05</p>
             <h3>AndyEngine, motor propio</h3>
             <p class="meta">Arquitectura y sistemas · Motor nativo en C++</p>
             <ul class="points">
@@ -305,7 +306,7 @@ footer { padding-block: 32px; border-top: 2px solid var(--ink); color: var(--mut
             <img src="https://img.itch.zone/aW1nLzE2MTgyOTY4LnBuZw==/original/nT3Uuq.png" alt="" loading="lazy" onerror="this.remove()">
           </div>
           <div>
-            <p class="stage">FASE 04 / 04</p>
+            <p class="stage">FASE 04 / 05</p>
             <h3>H Defense</h3>
             <p class="meta">Equipo de 10 · Programación de IA</p>
             <ul class="points">
@@ -320,14 +321,37 @@ footer { padding-block: 32px; border-top: 2px solid var(--ink); color: var(--mut
             </div>
           </div>
         </article>
+
+        <article class="project">
+          <div class="media" role="img" aria-label="Espacio reservado para una captura de Andy Validator">
+            <span>Aquí va una captura de Andy Validator</span>
+            <!-- TODO: <img src="media/andy-validator.png" alt="Ventana de Andy Validator mostrando los resultados de un modelo"> -->
+          </div>
+          <div>
+            <p class="stage">FASE 05 / 05</p>
+            <h3>Andy Validator</h3>
+            <p class="meta">Herramienta para artistas · C++ · 2026 · Participé en todo el desarrollo</p>
+            <ul class="points">
+              <li>Valida modelos 3D en formato FBX y dice a los artistas, regla por regla, si el modelo está bien o mal.</li>
+              <li>Reglas configurables con un archivo <code>validator.cfg</code>: límite de polígonos, nomenclatura, tolerancia de densidad de texel y modo Unreal.</li>
+              <li>Visualizador propio en OpenGL con interfaz Dear ImGui para ver el modelo y sus resultados.</li>
+              <li>Arquitectura extensible: cada validación es una clase que hereda de una base común, y se ejecutan en un hilo secundario.</li>
+            </ul>
+            <ul class="chips"><li>C++</li><li>FBX SDK</li><li>OpenGL</li><li>GLFW</li><li>Dear ImGui</li><li>GLM</li></ul>
+            <div class="links">
+              <a href="https://github.com/itsJ1mbo/Andy-Validator">Código</a>
+              <a href="https://github.com/itsJ1mbo/Andy-Validator/releases">Descargar ejecutable</a>
+            </div>
+          </div>
+        </article>
       </div>
 
       <h4>Jams, prototipos y experiencias</h4>
       <div class="minor">
         <div class="card">
-          <p class="tag">En desarrollo · Android Studio</p>
+          <p class="tag">En desarrollo · Android Studio · Java y Kotlin</p>
           <h3>Ale Joyride</h3>
-          <p>Juego estilo jetpack para móvil y ordenador, en desarrollo.</p>
+          <p>Juego estilo jetpack para móvil y ordenador, desarrollado con Android Studio, Java y Kotlin.</p>
           <!-- TODO: añade vídeo y enlace cuando esté terminado -->
         </div>
         <div class="card">
@@ -409,7 +433,7 @@ footer { padding-block: 32px; border-top: 2px solid var(--ink); color: var(--mut
         </div>
         <div>
           <h3>La IA como herramienta</h3>
-          <p>Estoy acostumbrado a trabajar con IA y al día de cómo está cambiando la industria. La uso para prototipar, depurar y aprender más rápido, siempre con criterio propio sobre lo que entra en el proyecto.</p>
+          <p>Estoy acostumbrado a trabajar con IA (Claude y ChatGPT) y al día de cómo está cambiando la industria. La uso para prototipar, depurar y aprender más rápido, siempre con criterio propio sobre lo que entra en el proyecto.</p>
         </div>
         <div>
           <h3>De PC a consola</h3>
@@ -426,7 +450,7 @@ footer { padding-block: 32px; border-top: 2px solid var(--ink); color: var(--mut
 
       <div class="platforms">
         <div class="plat"><h3>PC</h3><p>Unity y motor propio en C++.</p></div>
-        <div class="plat"><h3>Móvil</h3><p>Ale Joyride, juego estilo jetpack para móvil y ordenador, con Android Studio. También realidad aumentada en Android con Unity.</p><span class="badge">En desarrollo</span></div>
+        <div class="plat"><h3>Móvil</h3><p>Ale Joyride, juego estilo jetpack para móvil y ordenador, con Android Studio, Java y Kotlin. También realidad aumentada en Android con Unity.</p><span class="badge">En desarrollo</span></div>
         <div class="plat"><h3>Consola</h3><p>He aprendido a usar el kit de desarrollo de PS5 y cómo funciona la consola a bajo nivel.</p><span class="badge">Nuevo</span></div>
         <div class="plat"><h3>Realidad virtual y aumentada</h3><p>Bolera virtual en Unity para Meta Quest 2 y mascota en realidad aumentada con Vuforia.</p></div>
       </div>
@@ -434,15 +458,43 @@ footer { padding-block: 32px; border-top: 2px solid var(--ink); color: var(--mut
       <div class="skills">
         <div>
           <h3>Lenguajes</h3>
-          <ul class="chips"><li>C#</li><li>C++</li><li>C</li><li>Lua</li><li>JavaScript</li></ul>
+          <ul class="chips"><li>C#</li><li>C++</li><li>C</li><li>Java</li><li>Kotlin</li><li>Python</li><li>Lua</li><li>JavaScript</li><li>HTML / CSS</li><li>Bash</li><li>PowerShell</li><li>Blueprints</li></ul>
         </div>
         <div>
-          <h3>Motores, audio y plataformas</h3>
-          <ul class="chips"><li>Unity</li><li>FMOD</li><li>SDL</li><li>Ogre3D</li><li>OpenGL</li><li>PhysX</li><li>Android Studio</li><li>Vuforia</li><li>Meta Quest 2</li><li>Kit de desarrollo PS5</li></ul>
+          <h3>Motores y librerías</h3>
+          <ul class="chips"><li>Unity</li><li>Unreal Engine</li><li>RPG Maker</li><li>Clickteam Fusion</li><li>Phaser</li><li>SDL</li><li>Ogre3D</li><li>OpenGL</li><li>PhysX</li><li>FBX SDK</li><li>GLFW</li><li>Dear ImGui</li></ul>
         </div>
         <div>
-          <h3>Herramientas</h3>
-          <ul class="chips"><li>Git / GitHub</li><li>SVN</li><li>Visual Studio</li><li>Doxygen</li></ul>
+          <h3>Móvil y publicación</h3>
+          <ul class="chips"><li>Android Studio</li><li>Google Play Console</li><li>Google Play Games Services</li></ul>
+        </div>
+        <div>
+          <h3>Realidad virtual, aumentada y consola</h3>
+          <ul class="chips"><li>Meta Quest</li><li>Vuforia</li><li>Kit de desarrollo PS5</li></ul>
+        </div>
+        <div>
+          <h3>Audio</h3>
+          <ul class="chips"><li>FMOD</li><li>Audacity</li><li>Reaper</li><li>MuseScore</li></ul>
+        </div>
+        <div>
+          <h3>Arte y diseño</h3>
+          <ul class="chips"><li>Blender</li><li>Krita</li><li>GIMP</li><li>Mixamo</li><li>Figma</li></ul>
+        </div>
+        <div>
+          <h3>Equipo y control de versiones</h3>
+          <ul class="chips"><li>Git</li><li>GitHub</li><li>SVN</li><li>Trello</li><li>Discord</li></ul>
+        </div>
+        <div>
+          <h3>Código y documentación</h3>
+          <ul class="chips"><li>Visual Studio</li><li>Visual Studio Code</li><li>Doxygen</li><li>Markdown</li></ul>
+        </div>
+        <div>
+          <h3>Publicación</h3>
+          <ul class="chips"><li>itch.io</li><li>WebGL</li><li>GitHub Pages</li></ul>
+        </div>
+        <div>
+          <h3>IA</h3>
+          <ul class="chips"><li>Claude</li><li>ChatGPT</li></ul>
         </div>
       </div>
     </div>
