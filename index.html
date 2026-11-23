@@ -131,6 +131,16 @@ code { font-family: var(--font-mono); font-size: .88em; background: var(--surfac
 .card .tag { font-family: var(--font-mono); font-size: 12px; color: var(--accent-text); }
 .card .links { margin-top: auto; padding-top: 10px; }
 
+/* Google Play */
+.store { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 16px; }
+.app { display: grid; grid-template-columns: 72px 1fr; gap: 16px; background: var(--surface); border: 2px solid var(--ink); border-radius: 8px; padding: 16px; }
+.app .icon-box { position: relative; width: 72px; height: 72px; border-radius: 16px; border: 2px solid var(--ink); overflow: hidden; background: var(--bg); }
+.app .icon-box img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.app h3 { font-size: 1rem; margin: 0 0 4px; }
+.app p { margin: 0; color: var(--muted); font-size: 15px; }
+.app .tag { font-family: var(--font-mono); font-size: 12px; color: var(--accent-text); margin-bottom: 2px; }
+.app .links { margin-top: 10px; }
+
 /* How I work */
 .work { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
 .work > div { border-left: 4px solid var(--accent); padding: 2px 0 2px 18px; }
@@ -194,7 +204,7 @@ footer { padding-block: 32px; border-top: 2px solid var(--ink); color: var(--mut
       <div>
         <p class="kicker">Unity Developer &amp; Gameplay Programmer · 5º curso, UCM</p>
         <h1>Programo juegos que se sienten <mark>bien</mark> y suenan mejor.</h1>
-        <p class="lead">Soy Javier Tirado Ríos y estudio Desarrollo de Videojuegos en la UCM. Hago gameplay y sistemas en Unity (C#) y C++, con especial cariño por el audio con FMOD. Mis juegos han sido nominados y premiados. Busco mi primera oportunidad como junior o becario.</p>
+        <p class="lead">Soy Javier Tirado Ríos y estudio Desarrollo de Videojuegos en la UCM. Hago gameplay y sistemas en Unity (C#) y C++, con especial cariño por el audio con FMOD. Feather Rise fue nominado al Premio Innovación en Gamepolis 2023. Busco mi primera oportunidad como junior o becario.</p>
         <div class="cta">
           <a class="btn primary" href="#proyectos">Ver proyectos</a>
           <a class="btn" href="https://github.com/Vivu24">GitHub</a>
@@ -207,11 +217,11 @@ footer { padding-block: 32px; border-top: 2px solid var(--ink); color: var(--mut
         <ul class="achievements">
           <li>
             <span class="medal"><svg class="icon" aria-hidden="true"><use href="#trophy"/></svg></span>
-            <div><strong>Mejor idea con la temática</strong><span class="sub">Candela Bros · Global Game Jam 2026</span></div>
+            <div><strong>Nominado al Premio Innovación</strong><span class="sub">Feather Rise · GameInvest, Gamepolis 2023 · evento nacional</span></div>
           </li>
           <li>
             <span class="medal"><svg class="icon" aria-hidden="true"><use href="#trophy"/></svg></span>
-            <div><strong>Nominado al Premio Innovación</strong><span class="sub">Feather Rise · GameInvest, Gamepolis 2023</span></div>
+            <div><strong>Mejor idea con la temática</strong><span class="sub">Candela Bros · Global Game Jam 2026</span></div>
           </li>
         </ul>
         <div class="tiles">
@@ -226,9 +236,32 @@ footer { padding-block: 32px; border-top: 2px solid var(--ink); color: var(--mut
   <section id="proyectos">
     <div class="wrap">
       <h2 class="title">Proyectos</h2>
-      <p class="section-intro">Cinco proyectos principales, con equipos de hasta 12 personas, más jams, prototipos, realidad virtual y aumentada, y un juego multiplataforma en desarrollo.</p>
+      <p class="section-intro">Cuatro proyectos principales con equipos de hasta 12 personas, tres juegos publicados en Google Play, más jams, prototipos, realidad virtual y aumentada, y un juego multiplataforma en desarrollo.</p>
 
       <div class="projects">
+
+        <article class="project">
+          <div class="media" role="img" aria-label="Captura de Feather Rise">
+            <span>Captura de Feather Rise</span>
+            <img src="https://img.itch.zone/aW1nLzEyMDc2NjUyLmpwZw==/original/YrQ1hF.jpg" alt="" loading="lazy" onerror="this.remove()">
+          </div>
+          <div>
+            <p class="stage">FASE 01 / 04</p>
+            <p class="award"><svg class="icon" aria-hidden="true"><use href="#trophy"/></svg>Nominado al Premio Innovación · GameInvest, Gamepolis 2023</p>
+            <h3>Feather Rise</h3>
+            <p class="meta">Equipo de 5 · Programación de gameplay</p>
+            <ul class="points">
+              <li>Plataformas 2D por un bosque de obstáculos y puzles, con un jefe final. Cuatro zonas en tres niveles.</li>
+              <li>Mecánicas principales: movimiento, salto, dash, físicas, control del personaje y lanzamiento de plumas para escalar.</li>
+              <li>Trabajo directo con el equipo de arte para integrar y ajustar assets.</li>
+            </ul>
+            <ul class="chips"><li>Unity</li><li>C#</li><li>Físicas</li><li>Plataformas 2D</li></ul>
+            <div class="links">
+              <a href="https://vivu.itch.io/feather-rise">Jugar (itch.io)</a>
+              <a href="https://www.youtube.com/watch?v=xwwvh1qkrQk">Vídeo</a>
+            </div>
+          </div>
+        </article>
 
         <article class="project">
           <div class="media" role="img" aria-label="Captura de Candela Bros">
@@ -236,7 +269,7 @@ footer { padding-block: 32px; border-top: 2px solid var(--ink); color: var(--mut
             <img src="https://img.itch.zone/aW1nLzI1MzIyNzU2LnBuZw==/original/pVAU%2B7.png" alt="" loading="lazy" onerror="this.remove()">
           </div>
           <div>
-            <p class="stage">FASE 01 / 05</p>
+            <p class="stage">FASE 02 / 04</p>
             <p class="award"><svg class="icon" aria-hidden="true"><use href="#trophy"/></svg>Mejor idea con la temática · Global Game Jam 2026</p>
             <h3>Candela Bros</h3>
             <p class="meta">Equipo de 12 · Programación de audio y gameplay</p>
@@ -255,35 +288,12 @@ footer { padding-block: 32px; border-top: 2px solid var(--ink); color: var(--mut
         </article>
 
         <article class="project">
-          <div class="media" role="img" aria-label="Captura de Feather Rise">
-            <span>Captura de Feather Rise</span>
-            <img src="https://img.itch.zone/aW1nLzEyMDc2NjUyLmpwZw==/original/YrQ1hF.jpg" alt="" loading="lazy" onerror="this.remove()">
-          </div>
-          <div>
-            <p class="stage">FASE 02 / 05</p>
-            <p class="award"><svg class="icon" aria-hidden="true"><use href="#trophy"/></svg>Nominado al Premio Innovación · GameInvest, Gamepolis 2023</p>
-            <h3>Feather Rise</h3>
-            <p class="meta">Equipo de 5 · Programación de gameplay</p>
-            <ul class="points">
-              <li>Plataformas 2D por un bosque de obstáculos y puzles, con un jefe final. Cuatro zonas en tres niveles.</li>
-              <li>Mecánicas principales: movimiento, salto, dash, físicas, control del personaje y lanzamiento de plumas para escalar.</li>
-              <li>Trabajo directo con el equipo de arte para integrar y ajustar assets.</li>
-            </ul>
-            <ul class="chips"><li>Unity</li><li>C#</li><li>Físicas</li><li>Plataformas 2D</li></ul>
-            <div class="links">
-              <a href="https://vivu.itch.io/feather-rise">Jugar (itch.io)</a>
-              <a href="https://www.youtube.com/watch?v=xwwvh1qkrQk">Vídeo</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project">
           <div class="media" role="img" aria-label="Espacio reservado para una captura del motor">
             <span>Aquí va una captura o vídeo del motor</span>
             <!-- TODO: <img src="media/andyengine.png" alt="Editor del motor AndyEngine"> -->
           </div>
           <div>
-            <p class="stage">FASE 03 / 05</p>
+            <p class="stage">FASE 03 / 04</p>
             <h3>AndyEngine, motor propio</h3>
             <p class="meta">Arquitectura y sistemas · Motor nativo en C++</p>
             <ul class="points">
@@ -301,34 +311,12 @@ footer { padding-block: 32px; border-top: 2px solid var(--ink); color: var(--mut
         </article>
 
         <article class="project">
-          <div class="media" role="img" aria-label="Captura de H Defense">
-            <span>Captura de H Defense</span>
-            <img src="https://img.itch.zone/aW1nLzE2MTgyOTY4LnBuZw==/original/nT3Uuq.png" alt="" loading="lazy" onerror="this.remove()">
-          </div>
-          <div>
-            <p class="stage">FASE 04 / 05</p>
-            <h3>H Defense</h3>
-            <p class="meta">Equipo de 10 · Programación de IA</p>
-            <ul class="points">
-              <li>Tower defense nativo en C++: defiende la última fortaleza del Planeta H frente a hordas de criaturas.</li>
-              <li>Programación de oleadas y algoritmos de pathfinding.</li>
-            </ul>
-            <ul class="chips"><li>C++</li><li>SDL</li><li>Pathfinding</li><li>Tower defense</li></ul>
-            <div class="links">
-              <a href="https://vivu.itch.io/h-defense">Jugar (itch.io)</a>
-              <a href="https://github.com/UCM-FDI-DISIA/NineandoCorp">Código</a>
-              <a href="https://www.youtube.com/watch?v=04hXuQTI8-U">Vídeo</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project">
           <div class="media" role="img" aria-label="Espacio reservado para una captura de Andy Validator">
             <span>Aquí va una captura de Andy Validator</span>
             <!-- TODO: <img src="media/andy-validator.png" alt="Ventana de Andy Validator mostrando los resultados de un modelo"> -->
           </div>
           <div>
-            <p class="stage">FASE 05 / 05</p>
+            <p class="stage">FASE 04 / 04</p>
             <h3>Andy Validator</h3>
             <p class="meta">Herramienta para artistas · C++ · 2026 · Participé en todo el desarrollo</p>
             <ul class="points">
@@ -346,8 +334,45 @@ footer { padding-block: 32px; border-top: 2px solid var(--ink); color: var(--mut
         </article>
       </div>
 
+      <h4>Publicados en Google Play</h4>
+      <div class="store">
+        <div class="app">
+          <div class="icon-box"><img src="https://play-lh.googleusercontent.com/VfWnMdbEEj3i6CkAu7C7nDa81aYoPR7fRITOXf2OjI86ayiWAOHRfTvngNUZKnLawcEGtl1k9iCKHAcV0yoo=s0-br30" alt="" loading="lazy" onerror="this.remove()"></div>
+          <div>
+            <p class="tag">Android · Simulación · Idle</p>
+            <h3>Counting Sheep: Idle Tycoon</h3>
+            <p>Juego de agricultura idle: cría ovejas, produce lana y gana billones. Se juega sin conexión.</p>
+            <div class="links"><a href="https://play.google.com/store/apps/details?id=com.Vivu.ProyectoOveja&hl=es">Ver en Google Play</a></div>
+          </div>
+        </div>
+        <div class="app">
+          <div class="icon-box"><img src="https://play-lh.googleusercontent.com/9d1oqRM0IZ1Cg2l2PB5i2aobLPSjgx8ioU6bQs1yJIw0YlQ7EMpVhFPhfu1VKxi139YhjBWKzzK_ShQFHnQZWyk=s0-br30" alt="" loading="lazy" onerror="this.remove()"></div>
+          <div>
+            <p class="tag">Android · Carreras · Arcade</p>
+            <h3>Neon Horizon</h3>
+            <p>Arcade de velocidad extrema en un mundo neón: esquiva obstáculos con control táctil o giroscopio.</p>
+            <div class="links"><a href="https://play.google.com/store/apps/details?id=com.vivugames.neonhorizon&hl=es">Ver en Google Play</a></div>
+          </div>
+        </div>
+        <div class="app">
+          <div class="icon-box"><img src="https://play-lh.googleusercontent.com/qbWMQ-hEfWVptQX1WnZckGizA5odnGoloLIqAs1ai6mv0BLAbtNzMZ1lN-as054vMABXzlObenuugrwnLw9ArgM=s0-br30" alt="" loading="lazy" onerror="this.remove()"></div>
+          <div>
+            <p class="tag">Android · Simulación · Clicker</p>
+            <h3>Planet Destroyer Clicker</h3>
+            <p>Destruye planetas capa por capa y mejora tu poder en este juego de clics.</p>
+            <div class="links"><a href="https://play.google.com/store/apps/details?id=com.Vivu.PlanetDestroyerClicker&hl=es">Ver en Google Play</a></div>
+          </div>
+        </div>
+      </div>
+
       <h4>Jams, prototipos y experiencias</h4>
       <div class="minor">
+        <div class="card">
+          <p class="tag">Equipo de 10 · C++ · SDL</p>
+          <h3>H Defense</h3>
+          <p>Tower defense nativo en C++ con oleadas y pathfinding, donde programé la IA.</p>
+          <div class="links"><a href="https://vivu.itch.io/h-defense">Jugar</a><a href="https://github.com/UCM-FDI-DISIA/NineandoCorp">Código</a><a href="https://www.youtube.com/watch?v=04hXuQTI8-U">Vídeo</a></div>
+        </div>
         <div class="card">
           <p class="tag">En desarrollo · Android Studio · Java y Kotlin</p>
           <h3>Ale Joyride</h3>
@@ -450,7 +475,7 @@ footer { padding-block: 32px; border-top: 2px solid var(--ink); color: var(--mut
 
       <div class="platforms">
         <div class="plat"><h3>PC</h3><p>Unity y motor propio en C++.</p></div>
-        <div class="plat"><h3>Móvil</h3><p>Ale Joyride, juego estilo jetpack para móvil y ordenador, con Android Studio, Java y Kotlin. También realidad aumentada en Android con Unity.</p><span class="badge">En desarrollo</span></div>
+        <div class="plat"><h3>Móvil</h3><p>Tres juegos publicados en Google Play y Ale Joyride en desarrollo, con Android Studio, Java y Kotlin. También realidad aumentada en Android con Unity.</p><span class="badge">En desarrollo</span></div>
         <div class="plat"><h3>Consola</h3><p>He aprendido a usar el kit de desarrollo de PS5 y cómo funciona la consola a bajo nivel.</p><span class="badge">Nuevo</span></div>
         <div class="plat"><h3>Realidad virtual y aumentada</h3><p>Bolera virtual en Unity para Meta Quest 2 y mascota en realidad aumentada con Vuforia.</p></div>
       </div>
