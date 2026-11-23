@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Javier Tirado Portfolio</title>
+<meta name="description" content="Javier Tirado Ríos, programador de gameplay y sistemas en Unity (C#) y C++. Proyectos, habilidades y contacto.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* Layout idea: pantalla de selección de nivel. Cada proyecto es una "fase" con ficha técnica. */
+  --bg: #f2f6f5;
+  --surface: #ffffff;
+  --ink: #10252b;
+  --muted: #4b6269;
+  --line: #cfdcda;
+  --accent: #b34a00;
+  --accent-soft: #fbe9dc;
+  --font-display: "Chakra Petch", "Segoe UI", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d1a1f;
+    --surface: #14262d;
+    --ink: #e7f0ee;
+    --muted: #9bb1b6;
+    --line: #25404a;
+    --accent: #ffb04a;
+    --accent-soft: #2b2a22;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0d1a1f;
+  --surface: #14262d;
+  --ink: #e7f0ee;
+  --muted: #9bb1b6;
+  --line: #25404a;
+  --accent: #ffb04a;
+  --accent-soft: #2b2a22;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+a { color: inherit; }
+a:focus-visible, .btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+.wrap { width: min(1080px, 100% - 32px); margin-inline: auto; }
+
+/* Nav */
+.nav { border-bottom: 1px solid var(--line); }
+.nav .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; justify-content: space-between; padding-block: 14px; }
+.brand { font-family: var(--font-display); font-weight: 700; letter-spacing: .02em; text-decoration: none; }
+.nav ul { display: flex; flex-wrap: wrap; gap: 4px 20px; list-style: none; margin: 0; padding: 0; font-size: 15px; }
+.nav a.link { text-decoration: none; color: var(--muted); }
+.nav a.link:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
+
+/* Hero */
+.hero { padding-block: 64px 48px; display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 40px; align-items: end; }
+.kicker { font-family: var(--font-mono); font-size: 14px; color: var(--accent); margin: 0 0 12px; }
+h1 { font-family: var(--font-display); font-size: clamp(2.4rem, 6vw, 4rem); line-height: 1.05; margin: 0 0 16px; text-wrap: balance; }
+.lead { font-size: 1.15rem; color: var(--muted); max-width: 58ch; margin: 0 0 24px; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn { display: inline-block; padding: 10px 18px; border: 1.5px solid var(--ink); border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 15px; }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+:root[data-theme="dark"] .btn.primary { color: #1a1305; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .btn.primary { color: #1a1305; } }
+.btn:hover { transform: translateY(-1px); }
+
+.stats { margin: 0; padding: 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; font-family: var(--font-mono); font-size: 14px; display: grid; gap: 10px; }
+.stats div { display: flex; justify-content: space-between; gap: 16px; border-bottom: 1px dashed var(--line); padding-bottom: 8px; }
+.stats div:last-child { border-bottom: 0; padding-bottom: 0; }
+.stats dt { color: var(--muted); }
+.stats dd { margin: 0; text-align: right; font-weight: 500; }
+
+/* Sections */
+section { padding-block: 48px; border-top: 1px solid var(--line); }
+h2 { font-family: var(--font-display); font-size: 1.9rem; margin: 0 0 8px; text-wrap: balance; }
+.section-intro { color: var(--muted); max-width: 62ch; margin: 0 0 32px; }
+h3 { font-family: var(--font-display); font-size: 1.3rem; margin: 0 0 4px; }
+h4 { font-family: var(--font-display); font-size: 1.05rem; margin: 40px 0 12px; }
+
+/* Platforms + skills */
+.platforms { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 40px; }
+.plat { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 18px; }
+.plat h3 { font-size: 1.1rem; }
+.plat p { margin: 6px 0 0; color: var(--muted); font-size: 15px; }
+.plat .new { display: inline-block; font-family: var(--font-mono); font-size: 12px; background: var(--accent-soft); color: var(--accent); border-radius: 4px; padding: 1px 8px; margin-top: 10px; }
+
+.skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+.skills h3 { font-size: 1rem; font-family: var(--font-mono); font-weight: 500; color: var(--muted); margin-bottom: 10px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0; padding: 0; }
+.chips li { font-family: var(--font-mono); font-size: 13.5px; border: 1px solid var(--line); background: var(--surface); border-radius: 4px; padding: 3px 10px; }
+.chips li.strong { border-color: var(--accent); }
+
+/* Projects */
+.projects { display: grid; gap: 28px; }
+.project { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 28px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 20px; }
+.project:nth-child(even) .media { order: 2; }
+.media { position: relative; aspect-ratio: 16 / 9; border-radius: 6px; overflow: hidden; border: 1px solid var(--line); display: grid; place-items: center; text-align: center; padding: 16px; font-family: var(--font-mono); font-size: 13px; color: var(--muted);
+  background:
+    linear-gradient(var(--line) 1px, transparent 1px) 0 0 / 24px 24px,
+    linear-gradient(90deg, var(--line) 1px, transparent 1px) 0 0 / 24px 24px,
+    var(--bg); }
+.media span { background: var(--bg); padding: 4px 10px; border-radius: 4px; }
+.media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; background: var(--bg); }
+.meta { font-family: var(--font-mono); font-size: 13px; color: var(--accent); margin: 0 0 6px; }
+.project ul.points { margin: 12px 0 16px; padding-left: 18px; }
+.project ul.points li { margin-bottom: 4px; }
+.project .chips { margin-bottom: 16px; }
+.links { display: flex; flex-wrap: wrap; gap: 8px; }
+.links a { font-family: var(--font-mono); font-size: 13px; border: 1px solid var(--ink); border-radius: 4px; padding: 3px 10px; text-decoration: none; font-weight: 500; }
+.links a:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+:root[data-theme="dark"] .links a:hover { color: #1a1305; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .links a:hover { color: #1a1305; } }
+.links .pending { font-family: var(--font-mono); font-size: 13px; border: 1px dashed var(--muted); border-radius: 4px; padding: 3px 10px; color: var(--muted); }
+
+.minor { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+.minor .plat h3 { font-size: 1.05rem; }
+.minor .plat .links { margin-top: 12px; }
+.minor .plat .tag { font-family: var(--font-mono); font-size: 12px; color: var(--accent); margin: 0 0 4px; }
+
+/* Two-column text blocks */
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; }
+.entry { margin-bottom: 20px; }
+.entry p { margin: 4px 0 0; color: var(--muted); }
+.entry .when { font-family: var(--font-mono); font-size: 13px; color: var(--accent); }
+
+/* Contact */
+.contact { display: grid; gap: 8px; font-family: var(--font-mono); font-size: 15px; }
+.contact a { text-underline-offset: 4px; }
+footer { padding-block: 32px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+
+@media (max-width: 760px) {
+  .hero { grid-template-columns: 1fr; padding-block: 40px 32px; }
+  .project { grid-template-columns: 1fr; padding: 16px; }
+  .project:nth-child(even) .media { order: 0; }
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#inicio">JAVIER TIRADO</a>
+    <nav aria-label="Principal">
+      <ul>
+        <li><a class="link" href="#proyectos">Proyectos</a></li>
+        <li><a class="link" href="#plataformas">Plataformas</a></li>
+        <li><a class="link" href="#sobre-mi">Sobre mí</a></li>
+        <li><a class="link" href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+  <div class="wrap hero">
+    <div>
+      <p class="kicker">Unity Developer &amp; Gameplay Programmer</p>
+      <h1>Programo juegos que se sienten bien y suenan mejor.</h1>
+      <p class="lead">Soy Javier Tirado Ríos, estudiante de 4º de Desarrollo de Videojuegos en la UCM. Me muevo entre gameplay y sistemas en Unity (C#) y C++, con especial cariño por la integración de audio con FMOD. Busco mi primera oportunidad como junior o becario.</p>
+      <div class="cta">
+        <a class="btn primary" href="#proyectos">Ver proyectos</a>
+        <a class="btn" href="https://github.com/Vivu24">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/javier-tirado-rios-4546533ab/">LinkedIn</a>
+        <a class="btn" href="https://vivu.itch.io/">itch.io</a>
+      </div>
+    </div>
+    <dl class="stats" aria-label="Datos rápidos">
+      <div><dt>Base</dt><dd>Madrid</dd></div>
+      <div><dt>Estudios</dt><dd>UCM, 4º curso</dd></div>
+      <div><dt>Equipo más grande</dt><dd>12 personas</dd></div>
+      <div><dt>Plataformas</dt><dd>PC · Android · PS5 · VR</dd></div>
+      <div><dt>Inglés</dt><dd>B2</dd></div>
+    </dl>
+  </div>
+
+  <section id="proyectos">
+    <div class="wrap">
+      <h2>Proyectos</h2>
+      <p class="section-intro">Cuatro proyectos principales, de equipos de 5 a 12 personas, más jams, prototipos, proyectos de realidad virtual y aumentada, y un juego multiplataforma en desarrollo.</p>
+
+      <div class="projects">
+
+        <article class="project">
+          <div class="media" role="img" aria-label="Captura de Candela Bros">
+            <span>Captura de Candela Bros</span>
+            <img src="https://img.itch.zone/aW1nLzI1MzIyNzU2LnBuZw==/original/pVAU%2B7.png" alt="" loading="lazy" onerror="this.remove()">
+          </div>
+          <div>
+            <p class="meta">Equipo de 12 · Global Game Jam 2026 · Audio y gameplay</p>
+            <h3>Candela Bros</h3>
+            <ul class="points">
+              <li>Aventura de puzles cooperativos para 2 jugadores: dos velas perdidas que buscan el camino a casa.</li>
+              <li>Diseño e implementación completa del sistema de audio y del disparo de eventos con FMOD.</li>
+              <li>Coordinación técnica y gestión de repositorios en un equipo multidisciplinar de 12 personas.</li>
+              <li>Hecho entero durante la jam: sonido, arte, programación y efectos.</li>
+            </ul>
+            <ul class="chips"><li class="strong">Unity</li><li class="strong">C#</li><li>FMOD</li><li>Git</li><li>Cooperativo</li></ul>
+            <div class="links">
+              <a href="https://jesuggc.itch.io/candela-bros">Jugar (itch.io)</a>
+              <a href="https://www.youtube.com/watch?v=V83eXLGw_OQ">Vídeo</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="media" role="img" aria-label="Captura de Feather Rise">
+            <span>Captura de Feather Rise</span>
+            <img src="https://img.itch.zone/aW1nLzEyMDc2NjUyLmpwZw==/original/YrQ1hF.jpg" alt="" loading="lazy" onerror="this.remove()">
+          </div>
+          <div>
+            <p class="meta">Equipo de 5 · Programación de gameplay</p>
+            <h3>Feather Rise</h3>
+            <ul class="points">
+              <li>Plataformas 2D por un bosque de obstáculos y puzles, con un jefe final. Cuatro zonas en tres niveles.</li>
+              <li>Mecánicas principales: movimiento, salto, dash, físicas, control del personaje y lanzamiento de plumas para escalar.</li>
+              <li>Trabajo directo con el equipo de arte para integrar y ajustar assets.</li>
+            </ul>
+            <ul class="chips"><li class="strong">Unity</li><li class="strong">C#</li><li>Físicas</li><li>Plataformas 2D</li></ul>
+            <div class="links">
+              <a href="https://vivu.itch.io/feather-rise">Jugar (itch.io)</a>
+              <a href="https://www.youtube.com/watch?v=xwwvh1qkrQk">Vídeo</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="media" role="img" aria-label="Espacio reservado para una captura del motor">
+            <span>Aquí va una captura o vídeo del motor</span>
+            <!-- TODO: <img src="media/andyengine.png" alt="Editor del motor AndyEngine"> -->
+          </div>
+          <div>
+            <p class="meta">Arquitectura y sistemas · Motor nativo</p>
+            <h3>AndyEngine, motor propio</h3>
+            <ul class="points">
+              <li>Motor nativo desde cero con arquitectura Entidad-Componente (ECS).</li>
+              <li>Integración de Ogre3D, PhysX y FMOD.</li>
+              <li>Scripting en Lua y documentación técnica con Doxygen.</li>
+            </ul>
+            <ul class="chips"><li class="strong">C++</li><li>OpenGL</li><li>Ogre3D</li><li>PhysX</li><li>FMOD</li><li>Lua</li></ul>
+            <div class="links">
+              <!-- TODO: el repo de la organización da 404 sin sesión; si lo haces público, enlázalo aquí: https://github.com/Proyecto3-FDI-UCM/2425-Grupo01-AndyEngine -->
+              <span class="pending">Código (pendiente)</span>
+              <span class="pending">Vídeo (pendiente)</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="media" role="img" aria-label="Captura de H Defense">
+            <span>Captura de H Defense</span>
+            <img src="https://img.itch.zone/aW1nLzE2MTgyOTY4LnBuZw==/original/nT3Uuq.png" alt="" loading="lazy" onerror="this.remove()">
+          </div>
+          <div>
+            <p class="meta">Equipo de 10 · Programación de IA</p>
+            <h3>H Defense</h3>
+            <ul class="points">
+              <li>Tower defense nativo en C++: defiende la última fortaleza del Planeta H frente a hordas de criaturas.</li>
+              <li>Programación de oleadas y algoritmos de pathfinding.</li>
+            </ul>
+            <ul class="chips"><li class="strong">C++</li><li>SDL</li><li>Pathfinding</li><li>Tower defense</li></ul>
+            <div class="links">
+              <a href="https://vivu.itch.io/h-defense">Jugar (itch.io)</a>
+              <a href="https://github.com/UCM-FDI-DISIA/NineandoCorp">Código</a>
+              <a href="https://www.youtube.com/watch?v=04hXuQTI8-U">Vídeo</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <h4>Jams y prototipos</h4>
+      <div class="minor">
+        <div class="plat">
+          <p class="tag">Global Game Jam 2025 · Unity</p>
+          <h3>TechnoPoopy</h3>
+          <p>Shooter de supervivencia en primera persona con mejoras que se compran durante la partida. Luces, música y mucha mierda.</p>
+          <div class="links"><a href="https://danzhu26.itch.io/techno-poopy">Jugar</a><a href="https://www.youtube.com/watch?v=GVhUYgUWMfY">Vídeo</a></div>
+        </div>
+        <div class="plat">
+          <p class="tag">MálagaJam Weekend 18</p>
+          <h3>AliEstrés</h3>
+          <p>Simulación de oficina: organizar latas bajo la mirada de un jefe peculiar y una plaga de moscas.</p>
+          <div class="links"><a href="https://dahyuui.itch.io/aliestres">Jugar</a><a href="https://www.youtube.com/watch?v=xd2qYaILbU4">Vídeo</a></div>
+        </div>
+        <div class="plat">
+          <p class="tag">Global Game Jam 2024 · Unity</p>
+          <h3>Make Me Act</h3>
+          <p>Party game para hasta cuatro amigos: recrear una obra de teatro intentando no olvidar el guion.</p>
+          <div class="links"><a href="https://vivu.itch.io/make-me-act">Jugar</a></div>
+        </div>
+        <div class="plat">
+          <p class="tag">ConJamOn · Unity · 3D</p>
+          <h3>Venenis Doctrina</h3>
+          <p>Eres el peor boticario del pueblo, y el único. Mezcla pigmentos de slimes para preparar pociones.</p>
+          <div class="links"><a href="https://vivu.itch.io/venenis-doctrina">Jugar</a><a href="https://www.youtube.com/watch?v=TM1O-h14bwI">Vídeo</a></div>
+        </div>
+        <div class="plat">
+          <p class="tag">En desarrollo · Android Studio</p>
+          <h3>Ale Joyride</h3>
+          <p>Juego estilo jetpack para móvil y ordenador, en desarrollo.</p>
+          <!-- TODO: añade vídeo y enlace cuando esté terminado -->
+        </div>
+        <div class="plat">
+          <p class="tag">Realidad virtual · Unity</p>
+          <h3>Bolera virtual</h3>
+          <p>Bolera en realidad virtual desarrollada en Unity para Meta Quest 2.</p>
+          <!-- TODO: vídeo y enlace si los hay -->
+        </div>
+        <div class="plat">
+          <p class="tag">Realidad aumentada · Android · Unity</p>
+          <h3>Take care of Slotty</h3>
+          <p>Mascota virtual en realidad aumentada con Vuforia, proyecto de una asignatura.</p>
+          <div class="links"><a href="https://okoli.itch.io/take-care-of-slotty">Descargar</a></div>
+        </div>
+        <div class="plat">
+          <p class="tag">ConJamOn 2025</p>
+          <h3>Ikebana</h3>
+          <p>Simulador de herboristería.</p>
+          <div class="links"><a href="https://m00nhun7r3ss.itch.io/ikebana">Jugar</a></div>
+        </div>
+        <div class="plat">
+          <p class="tag">ConJamOn 2024 · 3D</p>
+          <h3>Vodka Krasnaya</h3>
+          <p>RTS en 3D ambientado en tierras soviéticas.</p>
+          <div class="links"><a href="https://rayian.itch.io/vodkakrasnaya">Jugar</a></div>
+        </div>
+      </div>
+
+      <h4>Más en itch.io</h4>
+      <div class="links">
+        <a href="https://vivu.itch.io/clichea">Clichéa</a>
+        <a href="https://vivu.itch.io/andys-museum">Andy's Museum</a>
+        <a href="https://vivu.itch.io/vivucards">VivuCards</a>
+        <a href="https://vivu.itch.io/andy-eats">Andy Eats</a>
+        <a href="https://vivu.itch.io/take-a-break">Take a Break</a>
+        <a href="https://vivu.itch.io/vivutroll">VivuTroll</a>
+        <a href="https://vivu.itch.io/esquiva-los-postes">Esquiva los Postes</a>
+        <a href="https://vivu.itch.io/">Ver todos</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="plataformas">
+    <div class="wrap">
+      <h2>Plataformas y herramientas</h2>
+      <p class="section-intro">Además del PC, estoy ampliando mi trabajo a móvil y consola.</p>
+
+      <div class="platforms">
+        <div class="plat"><h3>PC</h3><p>Unity y motor propio en C++.</p></div>
+        <div class="plat"><h3>Móvil</h3><p>Ale Joyride, juego estilo jetpack para móvil y ordenador, con Android Studio. También realidad aumentada en Android con Unity.</p><span class="new">En desarrollo</span></div>
+        <div class="plat"><h3>Consola</h3><p>He aprendido a usar el kit de desarrollo de PS5 y cómo funciona la consola a bajo nivel.</p><span class="new">Nuevo</span></div>
+        <div class="plat"><h3>Realidad virtual y aumentada</h3><p>Bolera virtual en Unity y mascota en realidad aumentada.</p></div>
+      </div>
+
+      <div class="skills">
+        <div>
+          <h3>Lenguajes</h3>
+          <ul class="chips"><li class="strong">C# · avanzado</li><li class="strong">C++ · sólido</li><li>Lua</li><li>C</li><li>JavaScript</li></ul>
+        </div>
+        <div>
+          <h3>Motores y audio</h3>
+          <ul class="chips"><li class="strong">Unity · avanzado</li><li class="strong">FMOD</li><li>SDL</li><li>Ogre3D</li><li>OpenGL</li><li>PhysX</li><li>Android Studio</li><li>Vuforia</li><li>Meta Quest 2</li><li>Kit de desarrollo PS5</li></ul>
+        </div>
+        <div>
+          <h3>Herramientas</h3>
+          <ul class="chips"><li>Git / GitHub</li><li>SVN</li><li>Visual Studio</li><li>Doxygen</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre-mi">
+    <div class="wrap">
+      <h2>Sobre mí</h2>
+      <p class="section-intro">Programación, equipos grandes y una base musical que se nota en cómo trabajo el audio.</p>
+      <div class="cols">
+        <div>
+          <div class="entry">
+            <h3>Formación</h3>
+          </div>
+          <div class="entry">
+            <span class="when">2022 – actualidad</span>
+            <p><strong>Grado en Desarrollo de Videojuegos</strong>, Universidad Complutense de Madrid.</p>
+          </div>
+          <div class="entry">
+            <span class="when">Piano</span>
+            <p><strong>Grado Elemental de Música</strong>, Conservatorio G. Martín Tenllado. Una base que me ayuda a diseñar audio e integrarlo con FMOD.</p>
+          </div>
+          <div class="entry">
+            <span class="when">Idiomas</span>
+            <p>Español nativo · Inglés B2 profesional.</p>
+          </div>
+        </div>
+        <div>
+          <div class="entry">
+            <h3>Experiencia y liderazgo</h3>
+          </div>
+          <div class="entry">
+            <span class="when">Presidente</span>
+            <p><strong>Club Deportivo UCM</strong>. Gestión de presupuestos, creación de nuevos equipos y organización de torneos universitarios.</p>
+          </div>
+          <div class="entry">
+            <span class="when">2024 – actualidad</span>
+            <p><strong>Árbitro (FMV) y logística en Scouts</strong>. Decisiones rápidas bajo presión, gestión de conflictos y trabajo en equipo intensivo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <div class="wrap">
+      <h2>Contacto</h2>
+      <p class="section-intro">Si buscas a alguien para una beca o un puesto junior en gameplay, sistemas o audio, escríbeme.</p>
+      <div class="contact">
+        <a href="mailto:javiertiradorios@gmail.com">javiertiradorios@gmail.com</a>
+        <a href="https://www.linkedin.com/in/javier-tirado-rios-4546533ab/">LinkedIn</a>
+        <a href="https://github.com/Vivu24">GitHub</a>
+        <a href="https://vivu.itch.io/">itch.io</a>
+        <!-- TODO: botón para descargar el CV en PDF: <a href="cv-javier-tirado.pdf">Descargar CV</a> -->
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Javier Tirado Ríos · Madrid</div>
+</footer>
+
+</body>
+</html>
