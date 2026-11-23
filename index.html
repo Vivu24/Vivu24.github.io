@@ -128,6 +128,7 @@ code { font-family: var(--font-mono); font-size: .88em; background: var(--surfac
 .card { background: var(--surface); border: 2px solid var(--ink); border-radius: 8px; padding: 18px; display: flex; flex-direction: column; gap: 6px; }
 .card h3 { font-size: 1.02rem; margin: 0; }
 .card p { margin: 0; color: var(--muted); font-size: 15px; }
+.card .award { align-self: flex-start; margin: 0 0 4px; font-size: 12px; }
 .card .tag { font-family: var(--font-mono); font-size: 12px; color: var(--accent-text); }
 .card .links { margin-top: auto; padding-top: 10px; }
 
@@ -223,6 +224,10 @@ footer { padding-block: 32px; border-top: 2px solid var(--ink); color: var(--mut
             <span class="medal"><svg class="icon" aria-hidden="true"><use href="#trophy"/></svg></span>
             <div><strong>Mejor idea con la temática</strong><span class="sub">Candela Bros · Global Game Jam 2026</span></div>
           </li>
+          <li>
+            <span class="medal"><svg class="icon" aria-hidden="true"><use href="#trophy"/></svg></span>
+            <div><strong>Segundo mejor juego</strong><span class="sub">Venenis Doctrina · ConJamOn 2023</span></div>
+          </li>
         </ul>
         <div class="tiles">
           <div class="tile"><b>5º</b><span>curso en la UCM</span></div>
@@ -257,8 +262,8 @@ footer { padding-block: 32px; border-top: 2px solid var(--ink); color: var(--mut
             </ul>
             <ul class="chips"><li>Unity</li><li>C#</li><li>Físicas</li><li>Plataformas 2D</li></ul>
             <div class="links">
-              <a href="https://vivu.itch.io/feather-rise">Jugar (itch.io)</a>
-              <a href="https://www.youtube.com/watch?v=xwwvh1qkrQk">Vídeo</a>
+              <a href="https://vivu.itch.io/feather-rise">Ver en itch.io</a>
+              <a href="https://www.youtube.com/watch?v=xwwvh1qkrQk">Ver vídeo</a>
             </div>
           </div>
         </article>
@@ -281,8 +286,8 @@ footer { padding-block: 32px; border-top: 2px solid var(--ink); color: var(--mut
             </ul>
             <ul class="chips"><li>Unity</li><li>C#</li><li>FMOD</li><li>Git</li><li>Cooperativo</li></ul>
             <div class="links">
-              <a href="https://jesuggc.itch.io/candela-bros">Jugar (itch.io)</a>
-              <a href="https://www.youtube.com/watch?v=V83eXLGw_OQ">Vídeo</a>
+              <a href="https://jesuggc.itch.io/candela-bros">Ver en itch.io</a>
+              <a href="https://www.youtube.com/watch?v=V83eXLGw_OQ">Ver vídeo</a>
             </div>
           </div>
         </article>
@@ -327,8 +332,8 @@ footer { padding-block: 32px; border-top: 2px solid var(--ink); color: var(--mut
             </ul>
             <ul class="chips"><li>C++</li><li>FBX SDK</li><li>OpenGL</li><li>GLFW</li><li>Dear ImGui</li><li>GLM</li></ul>
             <div class="links">
-              <a href="https://github.com/itsJ1mbo/Andy-Validator">Código</a>
-              <a href="https://github.com/itsJ1mbo/Andy-Validator/releases">Descargar ejecutable</a>
+              <a href="https://github.com/itsJ1mbo/Andy-Validator">Ver código</a>
+              <a href="https://github.com/itsJ1mbo/Andy-Validator/releases">Ver releases</a>
             </div>
           </div>
         </article>
@@ -368,16 +373,53 @@ footer { padding-block: 32px; border-top: 2px solid var(--ink); color: var(--mut
       <h4>Jams, prototipos y experiencias</h4>
       <div class="minor">
         <div class="card">
+          <p class="award"><svg class="icon" aria-hidden="true"><use href="#trophy"/></svg>Segundo mejor juego · ConJamOn 2023</p>
+          <p class="tag">ConJamOn 2023 · Unity · 3D</p>
+          <h3>Venenis Doctrina</h3>
+          <p>Eres el peor boticario del pueblo, y el único. Mezcla pigmentos de slimes para preparar pociones.</p>
+          <div class="links"><a href="https://vivu.itch.io/venenis-doctrina">Ver en itch.io</a><a href="https://www.youtube.com/watch?v=TM1O-h14bwI">Ver vídeo</a></div>
+        </div>
+        <div class="card">
+          <p class="tag">Mi primer proyecto serio · RPG Maker · 2022</p>
+          <h3>Clichéa</h3>
+          <p>Aventura RPG de fantasía: recupera un territorio arrasado por fuerzas malignas con combate, aliados y exploración.</p>
+          <div class="links"><a href="https://vivu.itch.io/clichea">Ver en itch.io</a><a href="https://www.youtube.com/watch?v=TrAyYzb1NEo">Ver vídeo</a></div>
+        </div>
+        <div class="card">
           <p class="tag">Equipo de 10 · C++ · SDL</p>
           <h3>H Defense</h3>
           <p>Tower defense nativo en C++ con oleadas y pathfinding, donde programé la IA.</p>
-          <div class="links"><a href="https://vivu.itch.io/h-defense">Jugar</a><a href="https://github.com/UCM-FDI-DISIA/NineandoCorp">Código</a><a href="https://www.youtube.com/watch?v=04hXuQTI8-U">Vídeo</a></div>
+          <div class="links"><a href="https://vivu.itch.io/h-defense">Ver en itch.io</a><a href="https://github.com/UCM-FDI-DISIA/NineandoCorp">Ver código</a><a href="https://www.youtube.com/watch?v=04hXuQTI8-U">Ver vídeo</a></div>
         </div>
         <div class="card">
-          <p class="tag">En desarrollo · Android Studio · Java y Kotlin</p>
-          <h3>Ale Joyride</h3>
-          <p>Juego estilo jetpack para móvil y ordenador, desarrollado con Android Studio, Java y Kotlin.</p>
-          <!-- TODO: añade vídeo y enlace cuando esté terminado -->
+          <p class="tag">Global Game Jam 2025 · Unity</p>
+          <h3>TechnoPoopy</h3>
+          <p>Shooter de supervivencia en primera persona con mejoras que se compran durante la partida. Luces, música y mucha mierda.</p>
+          <div class="links"><a href="https://danzhu26.itch.io/techno-poopy">Ver en itch.io</a><a href="https://www.youtube.com/watch?v=GVhUYgUWMfY">Ver vídeo</a></div>
+        </div>
+        <div class="card">
+          <p class="tag">Global Game Jam 2024 · Unity</p>
+          <h3>Make Me Act</h3>
+          <p>Party game para hasta cuatro amigos: recrear una obra de teatro intentando no olvidar el guion.</p>
+          <div class="links"><a href="https://vivu.itch.io/make-me-act">Ver en itch.io</a></div>
+        </div>
+        <div class="card">
+          <p class="tag">ConJamOn 2024 · 3D</p>
+          <h3>Vodka Krasnaya</h3>
+          <p>RTS en 3D ambientado en tierras soviéticas.</p>
+          <div class="links"><a href="https://rayian.itch.io/vodkakrasnaya">Ver en itch.io</a></div>
+        </div>
+        <div class="card">
+          <p class="tag">ConJamOn 2025</p>
+          <h3>Ikebana</h3>
+          <p>Simulador de herboristería.</p>
+          <div class="links"><a href="https://m00nhun7r3ss.itch.io/ikebana">Ver en itch.io</a></div>
+        </div>
+        <div class="card">
+          <p class="tag">MálagaJam Weekend 18</p>
+          <h3>AliEstrés</h3>
+          <p>Simulación de oficina: organizar latas bajo la mirada de un jefe peculiar y una plaga de moscas.</p>
+          <div class="links"><a href="https://dahyuui.itch.io/aliestres">Ver en itch.io</a><a href="https://www.youtube.com/watch?v=xd2qYaILbU4">Ver vídeo</a></div>
         </div>
         <div class="card">
           <p class="tag">Realidad virtual · Unity · Meta Quest 2</p>
@@ -389,49 +431,18 @@ footer { padding-block: 32px; border-top: 2px solid var(--ink); color: var(--mut
           <p class="tag">Realidad aumentada · Android · Unity</p>
           <h3>Take care of Slotty</h3>
           <p>Mascota virtual en realidad aumentada con Vuforia, proyecto de una asignatura.</p>
-          <div class="links"><a href="https://okoli.itch.io/take-care-of-slotty">Descargar</a></div>
+          <div class="links"><a href="https://okoli.itch.io/take-care-of-slotty">Ver en itch.io</a></div>
         </div>
         <div class="card">
-          <p class="tag">Global Game Jam 2025 · Unity</p>
-          <h3>TechnoPoopy</h3>
-          <p>Shooter de supervivencia en primera persona con mejoras que se compran durante la partida. Luces, música y mucha mierda.</p>
-          <div class="links"><a href="https://danzhu26.itch.io/techno-poopy">Jugar</a><a href="https://www.youtube.com/watch?v=GVhUYgUWMfY">Vídeo</a></div>
-        </div>
-        <div class="card">
-          <p class="tag">ConJamOn 2025</p>
-          <h3>Ikebana</h3>
-          <p>Simulador de herboristería.</p>
-          <div class="links"><a href="https://m00nhun7r3ss.itch.io/ikebana">Jugar</a></div>
-        </div>
-        <div class="card">
-          <p class="tag">MálagaJam Weekend 18</p>
-          <h3>AliEstrés</h3>
-          <p>Simulación de oficina: organizar latas bajo la mirada de un jefe peculiar y una plaga de moscas.</p>
-          <div class="links"><a href="https://dahyuui.itch.io/aliestres">Jugar</a><a href="https://www.youtube.com/watch?v=xd2qYaILbU4">Vídeo</a></div>
-        </div>
-        <div class="card">
-          <p class="tag">Global Game Jam 2024 · Unity</p>
-          <h3>Make Me Act</h3>
-          <p>Party game para hasta cuatro amigos: recrear una obra de teatro intentando no olvidar el guion.</p>
-          <div class="links"><a href="https://vivu.itch.io/make-me-act">Jugar</a></div>
-        </div>
-        <div class="card">
-          <p class="tag">ConJamOn 2024 · 3D</p>
-          <h3>Vodka Krasnaya</h3>
-          <p>RTS en 3D ambientado en tierras soviéticas.</p>
-          <div class="links"><a href="https://rayian.itch.io/vodkakrasnaya">Jugar</a></div>
-        </div>
-        <div class="card">
-          <p class="tag">ConJamOn · Unity · 3D</p>
-          <h3>Venenis Doctrina</h3>
-          <p>Eres el peor boticario del pueblo, y el único. Mezcla pigmentos de slimes para preparar pociones.</p>
-          <div class="links"><a href="https://vivu.itch.io/venenis-doctrina">Jugar</a><a href="https://www.youtube.com/watch?v=TM1O-h14bwI">Vídeo</a></div>
+          <p class="tag">En desarrollo · Android Studio · Java y Kotlin</p>
+          <h3>Ale Joyride</h3>
+          <p>Juego estilo jetpack para móvil y ordenador, desarrollado con Android Studio, Java y Kotlin.</p>
+          <!-- TODO: añade vídeo y enlace cuando esté terminado -->
         </div>
       </div>
 
       <h4>Más en itch.io</h4>
       <div class="links">
-        <a href="https://vivu.itch.io/clichea">Clichéa</a>
         <a href="https://vivu.itch.io/andys-museum">Andy's Museum</a>
         <a href="https://vivu.itch.io/vivucards">VivuCards</a>
         <a href="https://vivu.itch.io/andy-eats">Andy Eats</a>
